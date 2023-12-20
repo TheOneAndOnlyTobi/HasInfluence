@@ -5,8 +5,8 @@
 using namespace std;
 
 #define USE_BUSY_SLEEPING
-#include "external/FeaturePerfUtilities/include/fp_util/feature_cmd.h"
-#include "external/FeaturePerfUtilities/include/fp_util/sleep.h"
+#include "include/fp_util/feature_cmd.h"
+#include "include/fp_util/sleep.h"
 
 int main(int argc, char *argv[])
 {
