@@ -20,7 +20,14 @@ int main(int argc, char *argv[])
     if (argc < 1) {
         throw invalid_argument("Please specify a file");
     }
-    string filename = argv[argc-1];
+    string filename;
+    for (int CurrentArg = 1; CurrentArg < argc; ++CurrentArg) {
+        string argument;
+        argument = argv[CurrentArg];
+        if (argument.find(".txt") != std::string::npos) {
+            filename = argument;
+        }
+    }
 
     ifstream inFile(filename);
     if (!inFile.good()) {
