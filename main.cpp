@@ -10,11 +10,11 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    bool __attribute__((feature_variable("feature_1"))) F1 =
+    const bool __attribute__((feature_variable("feature_1"))) F1 =
     fp_util::isFeatureEnabled(argc, argv, "--f1");
-    bool __attribute__((feature_variable("feature_2"))) F2 =
+    const bool __attribute__((feature_variable("feature_2"))) F2 =
         fp_util::isFeatureEnabled(argc, argv, "--f2");
-    bool __attribute__((feature_variable("feature_3"))) F3 =
+    const bool __attribute__((feature_variable("feature_3"))) F3 =
         fp_util::isFeatureEnabled(argc, argv, "--f3");
 
     if (argc < 1) {
