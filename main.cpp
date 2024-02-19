@@ -34,9 +34,12 @@ inline void sleep_for_millisecs(unsigned Millisecs) {
 
 int main(int argc, char *argv[])
 {
-    const bool F1 = isFeatureEnabled(argc, argv, "--f1");
-    const bool F2 = isFeatureEnabled(argc, argv, "--f2");
-    const bool F3 = isFeatureEnabled(argc, argv, "--f3");
+    bool __attribute__((feature_variable("feature_1"))) F1 =
+      isFeatureEnabled(argc, argv, "--f1");
+    bool __attribute__((feature_variable("feature_2"))) F2 =
+        isFeatureEnabled(argc, argv, "--f2");
+    bool __attribute__((feature_variable("feature_3"))) F3 =
+        isFeatureEnabled(argc, argv, "--f3");
 
     if (argc < 1) {
         throw invalid_argument("Please specify a file");
