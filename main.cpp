@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     bool F3 = isFeatureEnabled(argc, argv, "--f3");
 
     if (argc < 1) {
-        throw invalid_argument("Please specify a file");
+        cout << "Please specify a file";
     }
     string filename;
     for (int CurrentArg = 1; CurrentArg < argc; ++CurrentArg) {
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
     ifstream inFile(filename);
     if (!inFile.good()) {
-        throw invalid_argument("File " + filename + " could not be found");
+        cout << "File " + filename + " could not be found";
     }
     const int lines = count(istreambuf_iterator<char>(inFile),
                istreambuf_iterator<char>(), '\n');
