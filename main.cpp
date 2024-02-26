@@ -47,9 +47,9 @@ inline void sleep_for_millisecs(unsigned Millisecs) {
 int main(int argc, char *argv[])
 {
 
-    static __attribute__((feature_variable("F1"))) bool F1 = isFeatureEnabled(argc, argv, "--f1");
-    static __attribute__((feature_variable("F2"))) bool F2 = isFeatureEnabled(argc, argv, "--f2");
-    static __attribute__((feature_variable("F3"))) bool F3 = isFeatureEnabled(argc, argv, "--f3");
+    static bool __attribute__((feature_variable("F1"))) F1 = isFeatureEnabled(argc, argv, "--f1");
+    static bool __attribute__((feature_variable("F2"))) F2 = isFeatureEnabled(argc, argv, "--f2");
+    static bool __attribute__((feature_variable("F3"))) F3 = isFeatureEnabled(argc, argv, "--f3");
 
 
     if (argc < 1) {
