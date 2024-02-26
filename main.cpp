@@ -5,6 +5,8 @@
 #include <chrono>
 #include <iostream>
 #include <thread>
+
+#include "project.h"
 using namespace std;
 
 #define USE_BUSY_SLEEPING
@@ -34,9 +36,9 @@ inline void sleep_for_millisecs(unsigned Millisecs) {
 
 int main(int argc, char *argv[])
 {
-    bool F1 = isFeatureEnabled(argc, argv, "--f1");
-    bool F2 = isFeatureEnabled(argc, argv, "--f2");
-    bool F3 = isFeatureEnabled(argc, argv, "--f3");
+    F1 = isFeatureEnabled(argc, argv, "--f1");
+    F2 = isFeatureEnabled(argc, argv, "--f2");
+    F3 = isFeatureEnabled(argc, argv, "--f3");
 
     if (argc < 1) {
         cout << "Please specify a file";
