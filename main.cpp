@@ -22,7 +22,18 @@ inline bool isFeatureEnabled(int argc, char *argv[], std::string FeatureName) {
 }
 
 inline void busy_sleep_for_millisecs(unsigned Millisecs) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(Millisecs));
+    auto start_us = std::chrono::duration_cast<std::chrono::microseconds>(
+      std::chrono::high_resolution_clock::now().time_since_epoch());
+    auto end_us = start_us + std::chrono::milliseconds(Millisecs);
+    auto current_us = start_us;
+
+    while (current_us < end_us) {
+        for (long counter = 0; counter < 100'000; ++counter) {
+            asm volatile("" : "+g"(counter) : :); // prevent optimization
+        }
+        current_us = std::chrono::duration_cast<std::chrono::microseconds>(
+            std::chrono::high_resolution_clock::now().time_since_epoch());
+    }
 }
 
 inline void sleep_for_millisecs(unsigned Millisecs) {
