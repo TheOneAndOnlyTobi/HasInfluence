@@ -6,7 +6,6 @@
 #include <iostream>
 #include <thread>
 
-#include "project.h"
 using namespace std;
 
 #define USE_BUSY_SLEEPING
@@ -47,6 +46,13 @@ inline void sleep_for_millisecs(unsigned Millisecs) {
 
 int main(int argc, char *argv[])
 {
+
+    static __attribute__((feature_variable("F1"))) bool F1 = false;
+    static __attribute__((feature_variable("F2"))) bool F2 = false;
+    static __attribute__((feature_variable("F3"))) bool F3 = false;
+
+
+
     F1 = isFeatureEnabled(argc, argv, "--f1");
     F2 = isFeatureEnabled(argc, argv, "--f2");
     F3 = isFeatureEnabled(argc, argv, "--f3");
