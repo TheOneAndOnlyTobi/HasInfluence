@@ -47,15 +47,10 @@ inline void sleep_for_millisecs(unsigned Millisecs) {
 int main(int argc, char *argv[])
 {
 
-    static __attribute__((feature_variable("F1"))) bool F1 = false;
-    static __attribute__((feature_variable("F2"))) bool F2 = false;
-    static __attribute__((feature_variable("F3"))) bool F3 = false;
+    static __attribute__((feature_variable("F1"))) bool F1 = isFeatureEnabled(argc, argv, "--f1");
+    static __attribute__((feature_variable("F2"))) bool F2 = isFeatureEnabled(argc, argv, "--f2");
+    static __attribute__((feature_variable("F3"))) bool F3 = isFeatureEnabled(argc, argv, "--f3");
 
-
-
-    F1 = isFeatureEnabled(argc, argv, "--f1");
-    F2 = isFeatureEnabled(argc, argv, "--f2");
-    F3 = isFeatureEnabled(argc, argv, "--f3");
 
     if (argc < 1) {
         cout << "Please specify a file";
