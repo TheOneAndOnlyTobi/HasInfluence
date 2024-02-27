@@ -11,7 +11,7 @@ using namespace std;
 
 #define USE_BUSY_SLEEPING
 
-inline bool isFeatureEnabled(int argc, char *argv[], std::string FeatureName) {
+bool isFeatureEnabled(const int argc, char *argv[], const std::string& FeatureName) {
     for (int CurrentArg = 1; CurrentArg < argc; ++CurrentArg) {
         if (argv[CurrentArg] == FeatureName) {
             return true;
