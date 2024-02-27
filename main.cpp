@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <fstream>
 #include <string>
-#include <stdexcept>
 #include <chrono>
 #include <iostream>
 #include <thread>
