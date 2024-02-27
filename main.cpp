@@ -79,10 +79,10 @@ int main(int argc, char *argv[])
         cout << "works 1" << endl;
     }
 
-    if (F1) {
+    if (F2) {
         cout << "works 2" << endl;
     }
-    if (F1) {
+    if (F3) {
         cout << "works 3" << endl;
     }
     if (F1) {
