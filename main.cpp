@@ -45,6 +45,10 @@ void sleep_for_millisecs(unsigned Millisecs) {
 #endif
 }
 
+static bool __attribute__((feature_variable("F1"))) F1;
+static bool __attribute__((feature_variable("F2"))) F2;
+static bool __attribute__((feature_variable("F3"))) F3;
+
 int main(int argc, char *argv[])
 {
 
