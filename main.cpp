@@ -75,10 +75,6 @@ int main(int argc, char *argv[])
     const int lines = count(istreambuf_iterator<char>(inFile),
                istreambuf_iterator<char>(), '\n');
 
-    if (F1) {
-        cout << "works 1" << endl;
-        sleep_for_millisecs(375);
-    }
 
     if (F2) {
         cout << "works 2" << endl;
