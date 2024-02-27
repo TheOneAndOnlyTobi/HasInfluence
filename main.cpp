@@ -77,16 +77,20 @@ int main(int argc, char *argv[])
 
     if (F1) {
         cout << "works 1" << endl;
+        sleep_for_millisecs(375);
     }
 
     if (F2) {
         cout << "works 2" << endl;
+        sleep_for_millisecs(375);
     }
     if (F3) {
         cout << "works 3" << endl;
+        sleep_for_millisecs(375);
     }
     if (F1) {
         cout << "works 4" << endl;
+        sleep_for_millisecs(375);
     }
 
     if (lines % 3 == 0) {
