@@ -21,7 +21,7 @@ bool isFeatureEnabled(const int argc, char *argv[], const std::string& FeatureNa
     return false;
 }
 
-inline void busy_sleep_for_millisecs(unsigned Millisecs) {
+void busy_sleep_for_millisecs(unsigned Millisecs) {
     auto start_us = std::chrono::duration_cast<std::chrono::microseconds>(
       std::chrono::high_resolution_clock::now().time_since_epoch());
     auto end_us = start_us + std::chrono::milliseconds(Millisecs);
@@ -36,7 +36,7 @@ inline void busy_sleep_for_millisecs(unsigned Millisecs) {
     }
 }
 
-inline void sleep_for_millisecs(unsigned Millisecs) {
+void sleep_for_millisecs(unsigned Millisecs) {
     std::cout << "Sleeping for " << Millisecs << " milliseconds" << std::endl;
 #ifdef USE_BUSY_SLEEPING
     busy_sleep_for_millisecs(Millisecs);
