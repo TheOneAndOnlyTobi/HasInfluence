@@ -76,11 +76,17 @@ int main(int argc, char *argv[])
                istreambuf_iterator<char>(), '\n');
 
     if (F1) {
-        cout << "works";
+        cout << "works 1" << endl;
     }
 
     if (F1) {
-        cout << "works again";
+        cout << "works 2" << endl;
+    }
+    if (F1) {
+        cout << "works 3" << endl;
+    }
+    if (F1) {
+        cout << "works 4" << endl;
     }
 
     if (lines % 3 == 0) {
